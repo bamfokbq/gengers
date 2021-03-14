@@ -1,0 +1,23 @@
+
+button{
+ padding: 1rem 2rem;
+ border-radius: 6px;
+ font-size: clamp(2rem, 2vw, 3.5rem);
+ border: none;
+ font-weight: bold;
+ box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+ /* margin-top: 2rem; */
+ cursor: pointer;
+}
+
+
+.btn-primary{
+    background-color: var(--primary-color-1);
+    color: white;
+}
+
+.btn-secondary{
+    background-color:var(--secondary-color-1);
+    color: #14213D;
+    
+}

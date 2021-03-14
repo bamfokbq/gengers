@@ -1,0 +1,47 @@
+
+.welcome-page{
+    background-color: var(--neutral-color);
+    padding: 5rem;
+    display: flex;
+    align-items: center;
+    height: 80vh;
+    
+}
+
+/* WELCOME QUOTE */
+.welcome-quote{
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+/* WELCOME MESSAGE */
+.welcome-message{
+    font-size: clamp(3rem, 4vw, 5rem);  
+    max-width: 13ch;
+    /* letter-spacing: 0.5rem; */
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    font-family: var(--main-font);
+}
+.welcome-message .margin{
+    margin-right: 1.5rem;
+}
+
+.welcome-page h3{
+    text-transform: uppercase;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    word-spacing: 3px;
+
+}
+
+mark{
+    background: transparent;
+    color: var(--secondary-color-1);
+}
+
+/* INTERFACE */
+.interface{
+    width: 80vw;
+    height: 100%;
+    max-width: 100%;
+}

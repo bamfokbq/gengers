@@ -1,0 +1,7 @@
+.sign__up{
+    width: 80vw;
+    margin: 5rem auto;
+    display: grid;
+    grid-template-columns: 3fr 2.5fr;
+    height: 100vh;
+}

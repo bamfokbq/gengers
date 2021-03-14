@@ -1,0 +1,112 @@
+.Content{
+    background-color: var( --neutral-color);
+    display: flex;
+    height: 100vh;
+    font-size: 1.6rem;
+}
+
+.Login{
+    display: grid;
+    place-content: center;
+    margin: 0rem auto;
+}
+
+.login__header{
+    font-size: 3rem;
+    line-height: 1.8;
+    margin: 3rem auto;
+    color: #404040
+}
+
+.FormWhite{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    box-shadow: 0px 2px 4px  rgba(0,0,0,0.3);
+    margin-bottom: 2.5rem;
+    padding: 20px 15px;
+    border-radius: 5px;
+    /* width: clamp(25rem, 30vw, 35rem); */
+}
+
+.FormBox{
+    display:flex;
+    margin: 20px;
+    border: 1px solid #cecece;
+    align-items: center;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.FormBox input{
+padding: 10px 20px;
+background: white;
+outline: none;
+color: #afafaf;
+border: 2px solid transparent;
+width: 100%;
+}
+
+
+.FormBox:hover{
+    border: 1px solid green;
+}
+
+.SubmitBtn{
+    color: rgb(34, 34, 34);
+    padding: 10px 15px;
+    max-width: 100%;
+    border-radius: 5px;
+    border: none;
+    background-color: #FFC145;
+    font-size: 1.6rem;
+    font-weight: bold;
+    box-shadow: 0px 2px 3px rgba(0,0,0,0.3);
+    cursor: pointer;
+    margin: 5px 20px;
+    transform: scale(1);
+    transition: transform ease-out 0.3s;
+    outline: none;
+}
+
+.SubmitBtn:hover{
+    background-color: #ffcc67;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.1);
+    transform: scale(0.99);
+}
+.sign_up{
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #eee;
+  width: 100%;
+  padding-top: 20px;
+}
+.SignUpBtn{
+    padding: 10px 15px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    background-color: #14213D;
+    color: #fff;
+    font-size: bold;
+    text-transform: uppercase;
+    box-shadow: 0px 2px 3px rgba(0,0,0,0.3);
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transform: scale(1);
+    transition: transform ease-out 0.3s;
+}
+
+.SubmitBtn,
+.SignUpBtn{
+     width: clamp(25rem, 30vw, 35rem);
+}
+
+.SignUpBtn:hover{
+     background-color: #283c69;
+     box-shadow: 0px 1px 2px rgba(54, 37, 37, 0.1);
+     transform: scale(0.99);
+}

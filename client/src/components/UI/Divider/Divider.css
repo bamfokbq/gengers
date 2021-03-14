@@ -1,0 +1,32 @@
+.divider{
+    display: flex;
+    place-content: center;
+    text-align: center;
+    gap: 2rem;
+    margin: 5rem;
+
+}
+
+.divider .line{
+    height: 0.8px;
+    width: 50rem;
+    align-self: center;
+}
+
+.divider .circle{
+    flex-shrink: 0;
+  background-color: var(--primary-color-1);
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.divider .top{
+    background-color: var(--secondary-color-1);
+}
+
+.divider .bottom{
+    background-color: var(--primary-color-1);
+}
+

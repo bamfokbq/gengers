@@ -1,0 +1,12 @@
+.navigation ul{
+ 
+ display: flex;
+ font-size: clamp(1.5vw, 1.8rem, 2vw);
+ column-gap: 20px;
+
+}
+
+.navigation ul li{
+    list-style:none;
+    
+}

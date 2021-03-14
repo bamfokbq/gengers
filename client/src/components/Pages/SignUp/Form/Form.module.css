@@ -1,0 +1,44 @@
+.form__container{
+   background-color: #bcd6fd;
+   display: grid;
+  place-content: center;
+}
+
+.form__box{
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+   margin: 1rem auto;
+}
+
+.form__box input {
+   width: 100%;
+}
+.form__box input:not(input[type="file"]) {
+    padding: 8px 12px;
+   border: none;
+   border-bottom: 1px solid #eee;
+   outline: none;
+   border-radius: 5px;
+}
+.form__box input[type='file']{
+   outline: none
+}
+.gender__element{
+   display: flex;
+}
+/* SUBMIT BUTTON */
+.submit__btn{
+  display: flex;
+}
+.submit__btn input{
+   outline: none;
+   padding: 10px 15px;
+   background-color: var(--primary-color-1);
+   color: white;
+   border: none;
+   width: 100%;
+   border-radius: 5px;
+   margin: 3rem auto;
+}
+

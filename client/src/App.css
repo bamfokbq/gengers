@@ -1,0 +1,31 @@
+/* ! RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+    /* Set the default fonts for headers */
+    --head-font: 'MerriWeather';
+    --main-font: 'Open Sans';
+    /* Declaration of variables */
+
+    --neutral-color: #EEF2F4;
+    --primary-color-1:#14213D;
+    --secondary-color-1: #FFC145;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: var(--header-font);
+}
+
+body{
+   font-family: var(--main-font);
+}

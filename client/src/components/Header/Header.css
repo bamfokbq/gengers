@@ -1,0 +1,23 @@
+.header{
+  background-color: #fff;
+  box-shadow: 0px 1px 5px 4px rgba(0,0,0,0.3);   
+  border-bottom: 1px solid var(--primary-color-1);
+  display: flex;
+  width: 100%;
+ justify-content: space-between;
+ align-items: center;
+}
+
+/* ! Mentor Link Button */
+.mentor-link {
+  width: max-content;
+  padding: 0.3rem 1rem;
+  margin-right: 1.5rem;
+  font-size: 1.5rem;
+  background: var(--primary-color-1);
+  border: none;
+  color: white;
+  font-weight: bold;
+  line-height: 1.8;
+  border-radius: 5px;
+}
