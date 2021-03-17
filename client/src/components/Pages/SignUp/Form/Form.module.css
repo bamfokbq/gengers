@@ -1,36 +1,44 @@
 .form__container{
-   background-color: #bcd6fd;
-   display: grid;
+  display: grid;
   place-content: center;
+  padding: clamp(1.5vw, 2rem, 2.5vw);
 }
 
 .form__box{
    display: flex;
    align-items: center;
    gap: 1rem;
-   margin: 1rem auto;
+   margin: 2.5rem auto;
+  
 }
 
-.form__box input {
+.form__box input,
+.form__selection select option {
    width: 100%;
+   font-size: clamp(0.8vw, 1.8rem, 2vw);
+   color: rgb(100, 100, 100)
 }
-.form__box input:not(input[type="file"]) {
-    padding: 8px 12px;
+
+
+.form__box input:not(input[type="file"]),
+.form__box select {
+   padding: 8px 12px;
    border: none;
    border-bottom: 1px solid #eee;
    outline: none;
    border-radius: 5px;
 }
+
+/* .form__box input:not(input[type="file"]),
+.form__box select */
+
 .form__box input[type='file']{
    outline: none
 }
-.gender__element{
+.gender__element,.submit__btn{
    display: flex;
 }
 /* SUBMIT BUTTON */
-.submit__btn{
-  display: flex;
-}
 .submit__btn input{
    outline: none;
    padding: 10px 15px;
@@ -40,5 +48,75 @@
    width: 100%;
    border-radius: 5px;
    margin: 3rem auto;
+   cursor: pointer;
+}
+/* GENDER STYLING */
+.gender__element{
+   display: flex
 }
 
+/* BUTTON RADIO */
+.radio {
+  display: grid;
+  grid-template-columns: min-content auto;
+  grid-gap: 0.5em;
+  font-size: 2rem;
+  color: var(--primary-color-1);
+
+}
+.radio:focus-within .radio__label{
+transform: scale(1.05);
+      opacity: 1;
+} 
+
+.radio__label {
+  line-height: 1;
+  transition: 180ms all ease-in-out;
+  opacity: 0.6;
+}
+
+.radio__input {
+  display: flex;
+} 
+
+.radio__input input{
+   opacity: 0;
+    width: 0;
+    height: 0;
+}
+.radio__input input:focus + .radio__control{
+ box-shadow: 0 0 0 0.05em #fff, 0 0 0.15em 0.1em var(--primary-color-1);
+}
+
+
+.radio__gradient input:checked + .radio__control {
+  background: radial-gradient(var(--primary-color-1) 50%, rgba(255, 0, 0, 0) 51%);
+}
+
+.radio__before .radio__control{
+   display: grid;
+   place-items: center;
+}
+
+.radio__before input + .radio__control::before{
+    content: "";
+    width: 0.5em;
+    height: 0.5em;
+    box-shadow: inset 0.5em 0.5em currentColor;
+    border-radius: 50%;
+    transition: 180ms transform ease-in-out;
+    transform: scale(0);
+}
+
+
+.radio__before  input:checked + .radio__control::before {
+    transform: scale(1);
+  }
+
+.radio__control {
+  display: block;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  border: 0.1em solid currentColor;
+  transform: translateY(-0.05em);}

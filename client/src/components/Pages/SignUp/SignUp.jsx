@@ -7,10 +7,13 @@ import styles from './SignUp.module.css'
 const SignUp = () => {
 
   return (
-    <div className={styles.sign__up}>
-      <Features />
-      <Form />
-    </div>
+    <>
+      <p className={styles.header}>Sign up for free and experience a life of fulfillment</p>
+      <div className={styles.sign__up}>
+        <Features />
+        <Form />
+      </div>
+    </>
   );
 };
 

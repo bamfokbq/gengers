@@ -12,6 +12,7 @@ import {
   Image,
   PermIdentity,
 } from '@material-ui/icons';
+import Card from '@material-ui/core/Card';
 import classes from './Form.module.css';
 // import {Container} from '@material-ui/core'
 
@@ -32,10 +33,55 @@ const Form = () => {
     confirmPassword: '',
   });
 
+  const regionsInGhana = [
+    'Select Region',
+    'Greater Accra Region',
+    'Western Region',
+    'Greater Ashanti Region',
+    'Central Region',
+    'Eastern Region',
+    'Northern Region',
+    'Upper East Region',
+    'Upper West Region',
+    'Volta Region',
+    'Brong Ahafo Region',
+    'Oti Region',
+    'Western North Region',
+    'North East Region',
+    'Savannah Region',
+    'Bono East Region',
+    'Ahafo Region',
+  ];
+
+  const clearField = () => {
+    setUserInfo({
+      firstName: '',
+      middleName: '',
+      lastName: '',
+      dateOfBirth: '',
+      gender: '',
+      email: '',
+      contactNumber: '',
+      region: '',
+      fieldOfInterest: '',
+      profilePicture: '',
+      userName: '',
+      password: '',
+      confirmPassword: '',
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    console.log(userInfo);
+    clearField();
+  };
+
   return (
-    <section className={styles.form__container}>
+    <Card className={styles.form__container}>
       <div className={styles.Form}>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className={styles.form__box}>
             <Person
               style={{
@@ -46,8 +92,11 @@ const Form = () => {
             <input
               type='text'
               value={userInfo.firstName}
-              onChange={(e) =>
-                setUserInfo({ ...userInfo, firstName: e.target.value })
+              onChange={(event) =>
+                setUserInfo({
+                  ...userInfo,
+                  firstName: event.target.value,
+                })
               }
               placeholder='First name'
             />
@@ -62,7 +111,12 @@ const Form = () => {
             <input
               type='text'
               value={userInfo.middleName}
-              onChange=''
+              onChange={(event) =>
+                setUserInfo({
+                  ...userInfo,
+                  middleName: event.target.value,
+                })
+              }
               placeholder='Middle name'
             />
           </div>
@@ -76,7 +130,12 @@ const Form = () => {
             <input
               type='text'
               value={userInfo.lastName}
-              onChange=''
+              onChange={(event) =>
+                setUserInfo({
+                  ...userInfo,
+                  lastName: event.target.value,
+                })
+              }
               placeholder='Last name'
             />
           </div>
@@ -90,7 +149,12 @@ const Form = () => {
             <input
               type='date'
               value={userInfo.dateOfBirth}
-              onChange=''
+              onChange={(event) =>
+                setUserInfo({
+                  ...userInfo,
+                  dateOfBirth: event.target.value,
+                })
+              }
               placeholder='Date of birth'
             />
           </div>
@@ -101,24 +165,20 @@ const Form = () => {
                 fontSize: '30px',
               }}
             />
-            <div className='gender__element'>
-              <label for='female'>Female</label>
-              <input
-                type='radio'
-                id='female'
-                name='gender'
-                value={userInfo.gender}
-              />
-            </div>
-            <div className='gender-element'>
-              <label for='male'>Male</label>
-              <input
-                type='radio'
-                id='male'
-                name='gender'
-                value={userInfo.gender}
-              />
-            </div>
+            <label className={`${classes.radio} ${classes.radio__gradient}`}>
+              <span className={classes.radio__input}>
+                <input type='radio' name='radio' />
+                <span className={classes.radio__control}></span>
+                <span className={classes.radio__label}>Male</span>
+              </span>
+            </label>
+            <label className={`${classes.radio} ${classes.radio__before}`}>
+              <span className={classes.radio__input}>
+                <input type='radio' name='radio' />
+                <span className={classes.radio__control}></span>
+                <span className={classes.radio__label}>Female</span>
+              </span>
+            </label>
           </div>
           <div className={styles.form__box}>
             <Email
@@ -130,7 +190,12 @@ const Form = () => {
             <input
               type='email'
               value={userInfo.email}
-              onChange=''
+              onChange={(event) =>
+                setUserInfo({
+                  ...userInfo,
+                  email: event.target.value,
+                })
+              }
               placeholder='Email'
             />
           </div>
@@ -144,7 +209,12 @@ const Form = () => {
             <input
               type='tel'
               value={userInfo.contactNumber}
-              onChange=''
+              onChange={(event) =>
+                setUserInfo({
+                  ...userInfo,
+                  contactNumber: event.target.value,
+                })
+              }
               placeholder='Contact number'
             />
           </div>
@@ -155,12 +225,25 @@ const Form = () => {
                 fontSize: '30px',
               }}
             />
-            <input
-              type='text'
-              value={userInfo.region}
-              onChange=''
-              placeholder='Region'
-            />
+            <div className={classes.form__selection}>
+              <label>
+                <select
+                  value={userInfo.region}
+                  required
+                  onChange={(event) =>
+                    setUserInfo({
+                      ...userInfo,
+                      region: event.target.value,
+                    })
+                  }>
+                  {regionsInGhana.map((region) => (
+                    <option key={region} value={region}>
+                      {region}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            </div>
           </div>
           <div className={styles.form__box}>
             <Category
@@ -172,7 +255,12 @@ const Form = () => {
             <input
               type='text'
               value={userInfo.fieldOfInterest}
-              onChange=''
+              onChange={(event) =>
+                setUserInfo({
+                  ...userInfo,
+                  fieldOfInterest: event.target.value,
+                })
+              }
               placeholder='Field of interest'
             />
           </div>
@@ -186,7 +274,12 @@ const Form = () => {
             <input
               alt={userInfo.username}
               value={userInfo.profilePicture}
-              onChange=''
+              onChange={(event) =>
+                setUserInfo({
+                  ...userInfo,
+                  profilePicture: event.target.value,
+                })
+              }
               type='file'
               name='avatar'
               accept='image/png, image/jpeg'
@@ -202,7 +295,12 @@ const Form = () => {
             <input
               type='text'
               value={userInfo.userName}
-              onChange=''
+              onChange={(event) =>
+                setUserInfo({
+                  ...userInfo,
+                  userName: event.target.value,
+                })
+              }
               placeholder='Create a username'
             />
           </div>
@@ -216,7 +314,12 @@ const Form = () => {
             <input
               type='password'
               value={userInfo.password}
-              onChange=''
+              onChange={(event) =>
+                setUserInfo({
+                  ...userInfo,
+                  password: event.target.value,
+                })
+              }
               placeholder='Create password'
             />
           </div>
@@ -230,7 +333,12 @@ const Form = () => {
             <input
               type='password'
               value={userInfo.confirmPassword}
-              onChange=''
+              onChange={(event) =>
+                setUserInfo({
+                  ...userInfo,
+                  confirmPassword: event.target.value,
+                })
+              }
               placeholder='Confirm password'
             />
           </div>
@@ -240,7 +348,7 @@ const Form = () => {
           </div>
         </form>
       </div>
-    </section>
+    </Card>
   );
 };
 

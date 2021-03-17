@@ -12,11 +12,11 @@ const LandingContent = () => {
   return (
     <>
       <div className='landing-content'>
-        <article className='content-article'>
+         <art icle className='content-article'>
           Youth mentoring Ghana, connect youth to competent and diligence
           mentors, where mentors equip and guide mentees to make appropriate and
           accurate decision for their future.
-        </article>
+        </art>
       </div>
 
       <Divider />

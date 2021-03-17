@@ -1,3 +1,25 @@
 .features{
-    background-color: pink;
+  background-color:#ffdfa6;
+  display: grid;
+  justify-content: center;
+  align-content: space-evenly;
+  border-top: 1px solid #eee;
+  border-left: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.features__content{
+     font-size: clamp(0.5vw, 1.5rem, 1.8vw);
+     padding: clamp(1.5vw, 2rem, 2.5vw)
+}
+
+.feature__header{
+    color: var( --primary-color-1);
+    margin-bottom: 2rem;
+    font-size: clamp(2vw, 3.5rem, 4vw);
+
+}
+
+.features__content p{
+   color: rgb(41, 41, 41)
 }
