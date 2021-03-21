@@ -1,15 +1,18 @@
 import React from 'react';
-import Footer from '../Footer/Footer';
-import Header from '../Header/Header';
-import style from './Dashboard.css';
+import style from './Dashboard.module.css';
+import Header from './Header/Header';
+import Navigation from './Navigation/Navigation';
+import Content from './Content/Content';
+import Sidebar from './Sidebar/Sidebar';
 
 const Dashboard = () => {
   return (
-    <div className={style.Dashboard}>
+    <main className={style.dashboard}>
       <Header />
-      <h2>Dashboard</h2>
-      <Footer />
-    </div>
+      <Navigation />
+      <Content />
+      <Sidebar />
+    </main>
   );
 };
 
