@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Form.module.css';
 import {
   Person,
@@ -344,7 +345,9 @@ const Form = () => {
           </div>
 
           <div className={classes.submit__btn}>
+           <Link to='/dashboard' className={classes.createBtn}>
             <input type='submit' value='Create New Account' />
+            </Link>
           </div>
         </form>
       </div>

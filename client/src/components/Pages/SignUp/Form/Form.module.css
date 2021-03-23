@@ -40,7 +40,7 @@
 }
 /* SUBMIT BUTTON */
 .submit__btn input{
-   outline: none;
+  outline: none;
    padding: 10px 15px;
    background-color: var(--primary-color-1);
    color: white;
@@ -49,6 +49,9 @@
    border-radius: 5px;
    margin: 3rem auto;
    cursor: pointer;
+}
+.submit__btn .createBtn{
+ width: 100%;
 }
 /* GENDER STYLING */
 .gender__element{

@@ -44,8 +44,9 @@ const Login = () => {
                   placeholder='Password'
                 />
               </div>
+              <Link to='/dashboard'>
                <input type='submit' value='Log In' className={styles.SubmitBtn} />
-
+</Link>
                <div className={styles.sign_up}>
               <p>New to Gengers?</p>
                <Link to='/sign-up' className={""}>
