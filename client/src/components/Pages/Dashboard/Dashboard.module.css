@@ -1,6 +1,10 @@
-.dashboard{
+/* .layout{
+ margin : 0 2vw;
+}  */
+
+.dashboard {
     display: grid;
-    grid-template-columns: 20vw 1fr 20vw;
+    grid-template-columns:20vw 1fr 20vw;
     gap: 2rem;
     position: relative;
 }

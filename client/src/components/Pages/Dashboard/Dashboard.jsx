@@ -7,11 +7,13 @@ import Sidebar from './Sidebar/Sidebar';
 
 const Dashboard = () => {
   return (
-    <main className={style.dashboard}>
-      <Header />
-      <Navigation />
-      <Content />
-      <Sidebar />
+    <main className={style.layout}>
+      <div className={style.dashboard}>
+        <Header />
+        <Navigation />
+        <Content />
+        <Sidebar />
+      </div>
     </main>
   );
 };

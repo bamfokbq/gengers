@@ -1,5 +1,26 @@
 .navigation{
-    background-color: #485;
+    border: 1px solid var(--primary-color);
     height: max-content;
     height: 50vh;
+    margin: 0 1.5vw;
+    font-size: clamp(1vw, 1.8rem, 1.8vw);
 }
+
+.navigation__link{
+    display:flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-color-2);
+    border-radius: 5px;
+    padding: 0.8rem 1.5rem;
+    transition: background .8s ease-out;
+    width: 100%;
+}
+
+.navigation__link:hover{
+    background-color: var(--primary-color-4);
+}
+
+
