@@ -1,4 +1,5 @@
-.content{
-    background-color: #098;
+.contents{
+    /* background-color: #098; */
+    font-size: clamp(1.2vw, 1.8rem, 2vw);
     height: 4000px
 }

@@ -5,7 +5,7 @@ import Resource from '../models/resource.js';
 
 // * CREATING NEW RESOURCES *//
 router.post(`/resource`, async (req, res) => {
-    
+
   const resource = new Resource({
     ...req.body,
     creator: req.user._id,

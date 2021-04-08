@@ -33,8 +33,8 @@ const userSchema = new Schema(
       required: true,
       unique: true,
       validate(userName) {
-        if (userName.length > 10) {
-          throw new Error(`Username cannot be more than 10 characters!`);
+        if (userName.length < 8) {
+          throw new Error(`Username cannot be less than 10 characters!`);
         }
       },
     },
@@ -93,7 +93,7 @@ const userSchema = new Schema(
     },
     role: {
       type: String,
-      default: 'Mentee',
+      default: 'Mentee'
     },
     tokens: [
       {
@@ -113,9 +113,10 @@ userSchema.methods.generateAuthToken = async function () {
 
   user.tokens = user.tokens.concat({ token });
   await user.save();
-  return token;
+  return token
 };
-// * SETTING A CUSTOM MIDDLEWARE FOR FINDING CREDENTIALS ON THE {MODEL}* //
+
+// SETTING A CUSTOM MIDDLEWARE FOR FINDING CREDENTIALS ON THE {MODEL}* //
 userSchema.statics.findByCredentials = async (userName, password) => {
   // ? Retrieve the user from the DB. //
   const user = await User.findOne({ userName });
@@ -127,7 +128,7 @@ userSchema.statics.findByCredentials = async (userName, password) => {
     return console.log(`Unable to Login, Password doesn't match!!!`);
   return user;
 };
-// * HASHING MENTEE'S PASSWORD * //
+// HASHING MENTEE'S PASSWORD * //
 userSchema.pre(`save`, async function (next) {
   const user = this;
   if (user.isModified(`password`)) {
