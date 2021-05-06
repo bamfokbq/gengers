@@ -29,7 +29,6 @@ const userSchema = new Schema(
     userName: {
       type: String,
       trim: true,
-      lowercase: true,
       required: true,
       unique: true,
       validate(userName) {
@@ -41,7 +40,6 @@ const userSchema = new Schema(
     email: {
       type: String,
       unique: true,
-      lowercase: true,
       Validate(email) {
         if (!validator.isEmail(email)) {
           throw new Error('Email is invalid!!!');

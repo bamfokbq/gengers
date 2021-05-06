@@ -5,13 +5,17 @@ import User from '../models/user.js';
 // ! ADD A NEW MENTEE TO DB. //
 router.post('/user', async (req, res) => {
   const user = new User(req.body);
+  const userID = user._id;
+  // CHECK: If the user exit and assign [USER] to a variable in the DB.
+  const doesUserExit = await User.exists({ _id: userID });
 
   try {
-    await user.save();
+  // COMMENT: Only save the User if it doesn't exit.
+    !doesUserExit && await user.save(); 
     const token = await user.generateAuthToken();
     res.status(201).send({ user, token });
   } catch (error) {
-    res.status(400).send(`Error: ${error}`);
+    res.status(400).send(`Error: ${error} this is the creation error`);
   }
 });
 // ! LOGGING IN MENTEE ! //
