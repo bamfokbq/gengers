@@ -1,14 +1,15 @@
 import express from 'express';
 const router = express.Router();
 import Resource from '../models/resource.js';
+import AuthMentor from '../middleware/AuthenticateMentor.js';
 
 
 // * CREATING NEW RESOURCES *//
-router.post(`/resource`, async (req, res) => {
-
+router.post(`/resource`, AuthMentor, async (req, res) => {
+ 
   const resource = new Resource({
     ...req.body,
-    creator: req.user._id,
+    creator: req.user
   });
 
   try {

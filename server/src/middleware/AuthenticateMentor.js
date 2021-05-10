@@ -13,7 +13,7 @@ const AuthMentor = async (req, res, next) => {
     req.user = user;
     next();
   } catch (error) {
-    res.status(404).send(`Error: ${error}`);
+    res.status(404).send(`Error: ${error} Couldn't create a resource`);
   }
 };
 

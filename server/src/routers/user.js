@@ -1,6 +1,7 @@
 import express from 'express';
 const router = express.Router();
 import User from '../models/user.js';
+import auth from '../middleware/Authentication.js';
 
 // ! ADD A NEW MENTEE TO DB. //
 router.post('/user', async (req, res) => {
@@ -13,7 +14,7 @@ router.post('/user', async (req, res) => {
   // COMMENT: Only save the User if it doesn't exit.
     !doesUserExit && await user.save(); 
     const token = await user.generateAuthToken();
-    res.status(201).send({ user, token });
+    res.status(201).send({ user,token });
   } catch (error) {
     res.status(400).send(`Error: ${error} this is the creation error`);
   }
@@ -32,7 +33,7 @@ router.post(`/user/login`, async (req, res) => {
   }
 });
 // ! LOGGING OUT MENTEE ! //
-router.get('/user/logout', async (req, res) => {
+router.post('/user/logout', auth, async (req, res) => {
   try {
     req.user.tokens = req.user.tokens.filter((token) => {
       return token.token !== req.token;
@@ -44,5 +45,6 @@ router.get('/user/logout', async (req, res) => {
     res.sendStatus(500);
   }
 });
+
 // * EXPOSE THE MENTEE ROUTER *//
 export default router;

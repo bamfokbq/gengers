@@ -22,8 +22,7 @@ const resourceSchema = new Schema(
     },
     creator: {
       type: mongoose.Schema.Types.ObjectId,
-      required: true,
-      ref: User,
+      ref: 'User.firstName',
     },
   },
   { timestamps: true }
