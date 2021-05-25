@@ -1,4 +1,3 @@
-import { Divider } from '@material-ui/core';
 import React from 'react';
 import classes from './Sidebar.module.css';
 import styles from './Sidebar.module.css';
