@@ -8,17 +8,23 @@ import './Navigation.css';
 const Navigation = () => {
   return (
     <nav className='navigation'>
-        <ul>
-          <li>
-            <a href='/'>Home</a>
-          </li>
-          <li>
-            <a href='/login'>Login</a>
-          </li>
-          <li>
-            <a href='/mentor'>Become a mentor</a>
-          </li>
-        </ul>
+      <ul>
+        <li>
+          <a className='navigation__link' href='/'>
+            Home
+          </a>
+        </li>
+        <li>
+          <a className='navigation__link' href='/login'>
+            Login
+          </a>
+        </li>
+        <li>
+          <a className='navigation__link' href='/mentor'>
+            Become a mentor
+          </a>
+        </li>
+      </ul>
     </nav>
   );
 };

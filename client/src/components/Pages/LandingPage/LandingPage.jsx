@@ -26,9 +26,7 @@ const LandingPage = () => {
           </div>
           <div className='welcome-message'>
             <h3>
-              <mark>Connect</mark> without <mark>limit</mark> with
-              <mark className='margin'>a</mark>
-              mentor
+              Connect without limit with a mentor
             </h3>
           </div>
           <Link to='/login'>

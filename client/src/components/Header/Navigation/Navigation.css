@@ -1,12 +1,33 @@
-.navigation ul{
- 
- display: flex;
- font-size: clamp(1.5vw, 1.8rem, 2vw);
- column-gap: 20px;
+.navigation {
+    margin-right: 2vw;
+}
+
+.navigation ul {
+    display: flex;
+    font-size: clamp(1.5vw, 1.8rem, 2vw);
+    column-gap: 20px;
 
 }
 
-.navigation ul li{
-    list-style:none;
-    
+.navigation ul li {
+    list-style: none;
+
+}
+
+.navigation__link {
+    text-decoration: none;
+    color: var(--primary-color-1);
+    border: 0.1vw solid var(--primary-color-1);
+    padding: 0.3vw 0.6vw;
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+}
+
+.navigation__link:hover {
+    color: white;
+    background: var(--primary-color-1);
+
 }
